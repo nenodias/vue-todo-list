@@ -1,11 +1,13 @@
 <template>
   <ul class="todo-list">
-    <li v-for="todo in sortedTasks" class="todo">
-      <div class="view">
-        <input @click="completeTask(todo)" class="toggle" type="checkbox" />
-        <label :class="{ 'todo-completed' : todo.completed }">{{ todo.title }}</label>
-      </div>
-    </li>
+    <transition-group appear name="fade">
+      <li v-for="(todo, index) in sortedTasks" class="todo" :key="index">
+        <div class="view">
+          <input @click="completeTask(todo)" class="toggle" type="checkbox" />
+          <label :class="{ 'todo-completed' : todo.completed }">{{ todo.title }}</label>
+        </div>
+      </li>
+    </transition-group>
   </ul>
 </template>
 
@@ -30,7 +32,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 .todo-list {
 	margin: 0;
 	padding: 0;
@@ -138,5 +140,11 @@ export default {
 		-webkit-appearance: none;
 		appearance: none;
 	}
+}
+.fade-enter-active,	.fade-leave-active	{
+		transition:	opacity	.5s
+}
+.fade-enter,	.fade-leave-to	/*	.fade-leave-active	in	<2.1.8	*/	{
+		opacity:	0
 }
 </style>
