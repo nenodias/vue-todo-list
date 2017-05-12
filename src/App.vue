@@ -2,9 +2,10 @@
   <section class="todoapp">
     <header class="header">
       <h1>Tarefas</h1>
-      <input-task @newTask="addTask"></input-task>
-      <task-list :todo-list="tasks"></task-list>
     </header>
+    <input-task @newTask="addTask"></input-task>
+    <task-list :todo-list="tasks"></task-list>
+    <router-link class="cep" to="/cep">Verificar CEP</router-link>
   </section>
 </template>
 
