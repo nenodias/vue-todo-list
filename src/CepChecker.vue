@@ -9,17 +9,25 @@
       <p>Cidade: {{address.cidade}}</p>
       <p>Estado: {{address.estado}}</p>
     </div>
+    <footer-todo>
+      <p>Cep Checker MIT License</p>
+      <p>Cep Checker is part of ToDo</p>
+    </footer-todo>
   </section>
 </template>
 
 <script>
 import AwesomeMask from 'awesome-mask'
+import FooterTodo from './components/FooterTodo'
 
 export default {
   data () {
     return {
       address: {}
     }
+  },
+  components: {
+    FooterTodo
   },
   directives: {
     'mask': AwesomeMask
