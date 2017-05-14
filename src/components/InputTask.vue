@@ -33,7 +33,7 @@ export default {
     addTask ($event) {
       let value = $event.target.value
       let task = this.createTask(value)
-      this.broadcast(task)
+      this.$store.commit('addTask', { task })
       this.clearField($event)
     }
   }

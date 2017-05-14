@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 import routes from './routes'
 import App from './App'
 import VueEvents from './plugins/events'
+import store from './store/index'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -19,6 +20,8 @@ const router = new VueRouter({
 
 /* eslint-disable no-new */
 new Vue({
+  store,
+  router,
   el: '#app',
   template: `
     <div id="app">
@@ -28,6 +31,5 @@ new Vue({
       </transition>
     </div>
   `,
-  router,
   components: { App }
 })

@@ -4,7 +4,7 @@
       <h1>Tarefas</h1>
     </header>
     <input-task></input-task>
-    <task-list :todo-list="tasks"></task-list>
+    <task-list></task-list>
     <router-link class="cep" to="/cep">Verificar CEP</router-link>
     <footer-todo></footer-todo>
   </section>
@@ -21,20 +21,6 @@ export default {
     InputTask,
     TaskList,
     FooterTodo
-  },
-  data () {
-    return {
-      tasks: []
-    }
-  },
-  mounted () {
-    console.log(this.$events)
-    this.$events.on('newTask', eventData => this.addTask(eventData))
-  },
-  methods: {
-    addTask (task) {
-      this.tasks.push(task)
-    }
   }
 }
 </script>
