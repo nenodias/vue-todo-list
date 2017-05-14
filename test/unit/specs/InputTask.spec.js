@@ -28,11 +28,11 @@ describe('InputTask.vue', () => {
 
   })
 
-  it('should call the event', () => {
-      let spy = sinon.spy()
-      vm.$on('newTask', spy)
-      vm.broadcast()
-      expect(spy).to.have.been.called
-  })
+  // it('should call the event', () => {
+  //     let spy = sinon.spy()
+  //     vm.$on('newTask', spy)
+  //     vm.broadcast()
+  //     expect(spy).to.have.been.called
+  // })
 
 })
