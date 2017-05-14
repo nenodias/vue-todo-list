@@ -3,7 +3,7 @@
     <header class="header">
       <h1>Tarefas</h1>
     </header>
-    <input-task @newTask="addTask"></input-task>
+    <input-task></input-task>
     <task-list :todo-list="tasks"></task-list>
     <router-link class="cep" to="/cep">Verificar CEP</router-link>
   </section>
@@ -23,6 +23,10 @@ export default {
     return {
       tasks: []
     }
+  },
+  mounted () {
+    console.log(this.$events)
+    this.$events.on('newTask', eventData => this.addTask(eventData))
   },
   methods: {
     addTask (task) {
